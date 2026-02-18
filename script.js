@@ -60,7 +60,7 @@ addBtn.addEventListener('click', () => {
 });
 
 function deleteCard(event, index) {
-    event.stopPropagation(); // Prevents flipping when clicking delete
+    event.stopPropagation(); 
     cards.splice(index, 1);
     saveAndRender();
 }
@@ -84,8 +84,7 @@ function renderCards() {
                 <div class="card-back"><p>${card.answer}</p></div>
             </div>
         `;
-        
-        // OPEN OVERLAY ON CLICK
+     
         cardEl.addEventListener('click', () => {
             openFocusMode(card);
         });
@@ -95,7 +94,7 @@ function renderCards() {
 }
 
 function openFocusMode(cardData) {
-    // Inject the card content into the overlay
+    
     activeCardContainer.innerHTML = `
         <div class="card-inner">
             <div class="card-front"><h1>${cardData.question}</h1></div>
@@ -105,25 +104,25 @@ function openFocusMode(cardData) {
     
     overlay.classList.remove('hidden');
     
-    // Add flip logic to the modal card specifically
+   
     const modalInner = activeCardContainer.querySelector('.card-inner');
     activeCardContainer.onclick = () => {
         activeCardContainer.classList.toggle('flipped');
     };
 }
 
-// CLOSE OVERLAY
+
 closeOverlayBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
-    activeCardContainer.classList.remove('flipped'); // Reset flip state
+    activeCardContainer.classList.remove('flipped'); 
 });
 
-// Close on clicking the backdrop
+
 overlay.addEventListener('click', (e) => {
     if(e.target === overlay) {
         overlay.classList.add('hidden');
         activeCardContainer.classList.remove('flipped');
     }
 });
-// Initial Load
+
 renderCards();

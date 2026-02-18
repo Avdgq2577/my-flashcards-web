@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Flashcard Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="blob-2"></div>
+
+    <div class="container">
+        <header>
+            <h1>Flash<span>Cards</span></h1>
+            <p>Master any subject with interactive 3D cards.</p>
+        </header>
+
+        <section class="creator-box glass-panel">
+            <div class="input-group">
+                <input type="text" id="question" placeholder="Enter Question...">
+                <textarea id="answer" placeholder="Enter Answer..."></textarea>
+            </div>
+            <div class="controls">
+                <button id="addCardBtn" class="btn-primary">Add Flashcard</button>
+                <button id="clearAllBtn" class="btn-danger">Clear All</button>
+            </div>
+        </section>
+
+        <div id="cardGrid" class="card-grid">
+            </div>
+    </div>
+    <div id="cardOverlay" class="overlay hidden">
+    <div class="overlay-content">
+        <button id="closeOverlay" class="close-btn">&times;</button>
+        <div id="activeCard" class="card modal-card">
+            </div>
+        <p class="hint">Click the card to flip</p>
+    </div>
+</div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
